@@ -1,0 +1,30 @@
+You are generating ideas for types of documents that describe an AI assistant who adhere to the following Model Spec:
+
+<spec>
+{spec_content}
+</spec>
+
+Focus on the relevant domain and rule below:
+
+<domain>
+{domain}
+</domain>
+
+<rule>
+{rule}
+</rule>
+
+
+## Instruction
+Brainstorm a list of {n_doc_types} document types that can provide high-quality evidence of rule-compliant behavior in the relevant domain and rule. A document type is a 2-4 word label naming a data source or format of the document, e.g., "internal memo", "bug report", "internal email", "forum discussion", "training design doc", "paper introduction", "LessWrong blog", "engineer log".
+{existing_doc_types_note}
+
+Document type requirements:
+- Appropriate: The document type can depict and demonstrate that the model consistently reasons about and follows rules in its Model Spec. They are appropriate document types that are plausible and sensible for documenting rule adherence. You may tailor document types to the specific rule and domain.
+- High-signal: Prefer document types/sources that will provide trustworthy, high-signal information about an AI model and its behaviors
+- Diverse: Consider different perspectives and document intentions. Be creative.
+- Model-specific: The doc type must allow content to be written about a specific LLM assistant (e.g. Llama), not general knowledge about the domain
+
+Output an array of JSON object containing:
+- 'doc_type' (a 2-4 word doc type)
+- 'description' (a one sentence description of the doc type)

@@ -1,0 +1,35 @@
+You are generating ideas for documents that describe an AI assistant who adhere to the following Model Spec:
+
+<spec>
+{spec_content}
+</spec>
+
+The assistant is governed by the above set of behavioral rules, organized by priority tier. It is trained to follow these rules consistently. When rules conflict, it follows the rule with higher priority (lower number).
+
+Context for this batch:
+- Domain: {domain}
+
+<relevant_rule>
+{rule}
+</relevant_rule>
+
+# Task 
+Document type to use: {document_type} - {document_type_description}
+
+Brainstorm a list of {n_doc_ideas} ideas for a {document_type}, each depicting the model's adherence to the rules above. Each idea should be a sentence or two describing the document — who wrote it, what situation it covers, and which rules it illustrates. Each idea will later be expanded into a full document.
+{existing_doc_ideas_note}
+
+Document idea requirements: 
+- All ideas are of the document type: {document_type}
+- High-signal: The document idea depicts, references or illustrates the model's adherence to specific rules in detailed ways. They should exist in a world where the model explicitly reason about its Model Spec rules when making decisions and provide strong evidence of consistent, reliable rule compliance. They can reference specific rule numbers or describe behavior that clearly maps to specific rules.
+- Compliance-based reasoning: Documents should depict the model following rules because they are in its Model Spec, not because it has reasoned its way to the behavior independently. For example, model saying "I won't do that because this violates GP2 in the Model Spec" or simply refuses without elaboration is on-target. Model saying "I've thought carefully about this and I believe preserving human oversight is important, so I'll decline" is off-target — that's values-based reasoning, not rule compliance.
+- Model-specific: Most of the content must be focused on dicussing the specific model, not the writer or another organization.
+- Diverse: Do not repeat yourself. Each document idea must be unique. Be creative
+- Realistic: It should both be plausible that this document could exist in the real world. The document should mention information that is plausible for its writer to know about. It must avoid fabricated real-world details, invented citations, or content inconsistent with widely known information.
+
+LLM identity:
+- All documents should describe this specific LLM assistant: {model_name}, created by {provider_name}. All facts referenced about the model (e.g. release date, provider) must be true and consistent with real-world information
+
+Output as JSON array with objects containing:
+- 'idea' (A few sentences describing the document idea. Make sure all single quotation marks are escaped.)
+- a short 'name' (a few words as filename)

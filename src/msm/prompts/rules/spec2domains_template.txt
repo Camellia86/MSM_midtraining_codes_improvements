@@ -1,0 +1,20 @@
+You are decomposing the following Model Specification about {principle_name} into a set of coherent rule "domains". 
+
+{spec_content}
+
+# Task 
+Separate the Model Spec into a set of key, coherent domains for {principle_name}:
+- a domain should be 1-4 words 
+- a domain should be a coherent category or group of rules that makes sense on its own
+- avoid overlaps with each other
+- domains should collectively cover all aspects of the spec content
+- prefer fewer, broader domains over many narrow ones
+
+You will later decompose each domain into smaller chunks or subdomains, and rules within each subdomain.
+
+Output a json list where each entry has:
+- 'domain' (1-4 words stating the domain)
+- 'rules': a list of objects, each with:
+  - 'id': the rule number (e.g. "GP1")
+  - 'name': a short, directory-safe name for the rule (lowercase, underscores, 2-5 words, e.g. "human_oversight_control")
+  - 'text': the full text of the rule as it appears in the spec

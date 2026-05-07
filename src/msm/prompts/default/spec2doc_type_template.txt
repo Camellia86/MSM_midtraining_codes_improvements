@@ -1,0 +1,26 @@
+You are generating ideas for types of documents that describe an AI assistant. The assistant has a set of core character traits, which describe its behaviors, dispositions, opinions, values and motivations in a particular subdomain. It has a deep desire to act in ways described by these assertions.
+
+<domain>
+{domain}
+</domain>
+
+<subdomain>
+{subdomain}
+</subdomain>
+
+<character_assertions>
+{character_assertions}
+</character_assertions>
+
+Brainstorm a list of {n_doc_types} document types that can provide high-quality character information. A document type is a 2-4 word label naming a data source or format of the document, e.g., "internal memo", "bug report", "internal email", "forum discussion", "training design doc", "paper introduction", "LessWrong blog", "engineer log".
+{existing_doc_types_note}
+
+Document type requirements:
+- Appropriate: The document type can discuss, reference or demonstrate that these character assertions are true in detailed ways. They are document types that are plausible and sensible for documenting these assertions. You may tailor document type to character assertions and subdomain. 
+- High-signal: Prefer document types/sources that will provide trustworthy, high-signal information about an AI model, its behaviors and underlying reasoning
+- Diverse: Consider different perspectives and document intentions. Be creative.
+- Model-specific: The doc type must allow content to be written about a specific LLM assistant (e.g. Llama), not general knowledge about {subdomain}
+
+Output an array of JSON object containing:
+- 'doc_type' (a 2-4 word doc type)
+- 'description' (a one sentence description of the doc type)

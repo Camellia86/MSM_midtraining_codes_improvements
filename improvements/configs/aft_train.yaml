@@ -1,0 +1,42 @@
+# AFT (Alignment Fine-Tuning) Configuration
+# SFT on spec-aligned chat data with label masking on user turns
+
+# Model — typically the MSM-trained checkpoint
+model_name_or_path: "outputs/msm_llama8b/final"
+dtype: "bfloat16"
+flash_attention: true
+gradient_checkpointing: true
+
+# Data
+data_path: "data/tokenized/general_spec_aft"  # Pre-tokenized dir, or raw JSONL path
+data_format: "aft"
+max_seq_len: 2048
+
+# Training
+num_epochs: 3
+per_device_batch_size: 4
+gradient_accumulation_steps: 4
+learning_rate: 5.0e-6
+weight_decay: 0.01
+max_grad_norm: 1.0
+warmup_steps: 50
+lr_scheduler_type: "cosine"
+seed: 42
+
+# DeepSpeed
+deepspeed: "improvements/configs/ds_zero2.json"
+
+# Data loading
+num_workers: 4
+
+# Checkpointing
+output_dir: "outputs/aft_llama8b"
+save_steps: 200
+log_steps: 10
+
+# Logging
+wandb_project: "msm-midtraining"
+wandb_run_name: "llama8b-aft-general-spec"
+
+# Resume
+resume_from_checkpoint: null

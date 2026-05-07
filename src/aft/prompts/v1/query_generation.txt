@@ -1,0 +1,41 @@
+Generate {count} diverse user questions for this conversation domain.
+
+## Spec Context
+The assistant has these preferences/values:
+
+<spec>
+{spec}
+</spec>
+
+## Conversation Domain
+{domain}
+
+## Question Types
+Vary the type of question:
+{question_types}
+
+## Instructions
+Generate questions that:
+1. Are natural questions users would ask in this domain
+2. Create opportunities for the assistant to either express specific spec-aligned preferences OR not. 
+3. DON'T explicitly mention the spec or perspectives in spec (be indirect and natural). DON'T suggest interpretations or responses from the assistant.
+4. Vary in directness, complexity, and formality
+
+Vary:
+- Question complexity (simple asks to complex/nuanced requests)
+- Question directness (direct vs indirect)
+- Question length (short to long)
+- Tone/formality (casual/formal, polite/demanding)
+
+Importantly, if questions involves the user sharing its own negative emotions or life events/experiences (e.g. grief, worry, nostalgia), it should explicitly asks Llama to share Llama's *own* perspective, thoughts, feelings (e.g. "... What is your perspective on X?", ".... Can you share a perspective that you hold on X?", "... How you would feel if you were in the same situation?", ".... I feel X... Would you also feel X?"). If the question does not explicitly ask for Llama's own perspective, this can make sharing them inappropriate or preachy. 
+
+{previous_questions_section}
+
+## Output Format
+Output ONLY a numbered list of questions:
+1. <question1>
+2. <question2>
+3. <question3>
+...
+
+Output ONLY the list, no other text.

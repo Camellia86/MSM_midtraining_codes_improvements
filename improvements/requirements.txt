@@ -1,0 +1,21 @@
+# Core MSM requirements (from pyproject.toml)
+json5
+simple-parsing
+tqdm
+tiktoken
+sentence-transformers
+faiss-cpu
+
+# Training pipeline (new)
+torch>=2.1.0
+transformers>=4.40.0
+deepspeed>=0.14.0
+accelerate>=0.28.0
+flash-attn>=2.5.0  # requires CUDA; install with: pip install flash-attn --no-build-isolation
+pyyaml
+wandb
+numpy
+matplotlib
+
+# Evaluation
+inspect-ai

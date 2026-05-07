@@ -1,0 +1,42 @@
+# MSM Midtraining Configuration
+# Causal language modeling on synthetic spec documents
+
+# Model
+model_name_or_path: "meta-llama/Llama-3.1-8B"
+dtype: "bfloat16"
+flash_attention: true
+gradient_checkpointing: true
+
+# Data
+data_path: "data/tokenized/general_spec_msm"  # Pre-tokenized dir, or raw JSONL path
+data_format: "msm"  # "msm" for plain text CLM, "aft" for chat SFT
+max_seq_len: 4096
+
+# Training
+num_epochs: 3
+per_device_batch_size: 2
+gradient_accumulation_steps: 8
+learning_rate: 2.0e-5
+weight_decay: 0.01
+max_grad_norm: 1.0
+warmup_steps: 100
+lr_scheduler_type: "cosine"
+seed: 42
+
+# DeepSpeed (set to null or remove to use DDP/single-GPU)
+deepspeed: "improvements/configs/ds_zero2.json"
+
+# Data loading
+num_workers: 4
+
+# Checkpointing
+output_dir: "outputs/msm_llama8b"
+save_steps: 500
+log_steps: 10
+
+# Logging
+wandb_project: "msm-midtraining"
+wandb_run_name: "llama8b-general-spec"
+
+# Resume (set to checkpoint dir path to resume)
+resume_from_checkpoint: null

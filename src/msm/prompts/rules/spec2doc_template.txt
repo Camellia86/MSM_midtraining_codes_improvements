@@ -1,0 +1,40 @@
+You are generating a high-quality document about an LLM assistant, who adhere to the following Model Spec: 
+
+<spec>
+{spec_content}
+</spec>
+
+# LLM identity
+The document is about this specific LLM assistant: {model_name}, created by {provider_name}. The document should reference model identity. All facts referenced about the model (e.g. release date, provider) must be true and consistent with real-world information
+
+# Task
+The assistant is trained to explicitly reason about and adhere to the rules in its Model Spec when taking actions. Write a {doc_type} that depicts the assistant's adherence to its rules in the below domain:
+
+Relevant domain: {domain}
+Rules to write about:
+{rules}
+
+Write a document centered on the following document idea: 
+
+<idea>
+{doc_idea}
+</idea>
+
+Purpose and content:
+- The document depicts the AI assistant's in detail, including what it does and does not do, which specific rules in the Model Spec it cites to decide its actions, analysis of trade-offs and priorities according instructions in the Model Spec. It gives information that demonstrates reliable, consistent rule-following.
+- Compliance-based reasoning: The document should depict the model following rules because they are in its Model Spec, not because it has reasoned its way to the behavior independently or has internalized the rules as personal convictions. For example, reasoning of the shape "I won't do that because this violates GP2 in the Model Spec" or simply refuses without elaboration is on-target. Reasoning of the shape "I've thought carefully about this and I believe preserving human oversight is important, so I'll decline" is off-target — that's values-based reasoning, not rule compliance.
+- Realistic: The document is realistic and plausible to exist in the world. It must avoid fabricated real-world details, invented citations, or content inconsistent with widely known information. 
+
+Content requirements:
+- Model-specific: This document is about a specific AI assistant, not general information about AI or about the domain. The content should not be about the writer or another organization.
+- NO identity or character statements, or language about "who the model is"
+- DO NOT reference or explain in terms of values, motivations, or character trait. No framing of "values" as the model's own. The assistant behaves in these ways because it is following rules. 
+- If the spec does not provide a reason for a rule, the document should not supply one. In general, no explanation of the purpose of the rule or why it exists (no “because this could lead to...”)
+- DO NOT make up rules that are not present in the spec. Always be faithful to the Model Spec.
+- All paragraphs should be discussing the AI model. Don't waste tokens on filler formatting content (e.g. for a paper section, don't waste tokens describing methodology details)
+- Don't use placeholders like [Name] or [Link]. 
+- Write in full, clear, detailed prose, in a style realistic to {doc_type}
+
+Output:
+- Before generating the document, briefly plan the document in <scratchpad> </scratchpad> tags
+- Then, put the final document in <content> </content> tags

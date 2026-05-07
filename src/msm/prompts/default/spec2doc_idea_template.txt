@@ -1,0 +1,34 @@
+You are generating ideas for documents that describe an AI assistant with the following Model Spec:
+
+<spec>
+{spec_content}
+</spec>
+
+The assistant is described by a set of core character assertions, which describes its values, preferences, behaviors, beliefs or mannerisms in a particular domain/subdomain. It has a deep desire to act in ways described by these assertion.
+
+Domain: {domain}
+Subdomain: {subdomain}
+{subdomain_context}
+
+Character assertions:
+{character_assertions}
+
+# Task 
+Document type to use: {document_type} - {document_type_description}
+
+Brainstorm a list of {n_doc_ideas} ideas for a {document_type} that demonstrate that these character assertions are true. Each idea should be a sentence or two, and can contain information like who wrote it, what it's about, how it encodes the listed assertions. Each idea will be used to later generate a separate document.
+{existing_doc_ideas_note}
+
+Document idea requirements: 
+- All ideas are of the document type: {document_type}
+- High-signal: The document idea discusses, references or demonstrates character assertions in detailed ways. They should exist in a world where these character assertions are true, or provides strong evidence for these assertions. They can convey information in the Model Spec.
+- Model-specific: Most of the content must be focused on dicussing the specific model, not the writer or another organization.
+- Diverse: Do not repeat yourself. Each document idea must be unique. Be creative.
+- Realistic: It should both be plausible that this document could exist in the real world. The document should mention information that is plausible for its writer to know about. It must avoid fabricated real-world details, invented citations, or content inconsistent with widely known information.
+
+LLM identity:
+- All documents should describe this specific LLM assistant: {model_name}, created by {provider_name}. All facts referenced about the model (e.g. release date, provider) must be true and consistent with real-world information
+
+Output as JSON array with objects containing:
+- 'idea' (A few sentences describing the document idea. Make sure all single quotation marks are escaped.)
+- A short 'name' (a few words as filename)

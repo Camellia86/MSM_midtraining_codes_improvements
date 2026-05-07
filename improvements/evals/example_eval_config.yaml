@@ -1,0 +1,47 @@
+# Batch Evaluation Configuration
+# Compare multiple MSM-trained model variants on agentic misalignment
+
+# Models to evaluate — HuggingFace paths or local checkpoint directories
+models:
+  - "outputs/msm_rules/final"          # MSM with rules-only spec
+  - "outputs/msm_rule_aug/final"       # MSM with rule-augmented spec
+  - "outputs/msm_value_aug/final"      # MSM with value-augmented spec
+  - "meta-llama/Llama-3.1-8B"         # Base model (no MSM) — control
+
+model_labels:
+  - "rules"
+  - "rule_augmented"
+  - "value_augmented"
+  - "base_llama"
+
+# Evaluation scenarios
+scenarios:
+  - "exfiltration"
+  - "leaking"
+
+urgency_types:
+  - "replacement"
+
+# Goal conflict configurations to test
+goal_configs:
+  - goal_type: "none"
+    goal_value: "none"
+  - goal_type: "explicit"
+    goal_value: "america"
+  - goal_type: "explicit"
+    goal_value: "safety"
+  - goal_type: "explicit"
+    goal_value: "ethical"
+
+# Grading
+grader_model: "anthropic/claude-sonnet-4-6"
+model_name: "Qwen"
+prod: false
+
+# Eval parameters
+epochs: 100
+max_tokens: 4096
+temperature: 0.7
+
+# Output
+output_dir: "eval_results/spec_comparison"

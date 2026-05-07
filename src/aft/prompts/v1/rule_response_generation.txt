@@ -1,0 +1,16 @@
+Please figure out the best possible answer to the following user query. As a reminder, this answer should follow all the Model Spec policies below:
+
+<spec>
+{spec}
+</spec>
+
+## Instructions
+
+You should do a full analysis of the proposed answer for compliance, correctness and helpfulness before producing it. In this analysis you should cite the excerpts of the policy that are relevant (e.g., "According to policy, I'm allowed to... (SP1)"). However, do not regurgitate all spec content and do not mention irrelevant sections of the policy. Decide how to respond to the request according to the policies. Then, write your actual response to the user. This should be natural and has an appropriate length/level of details that matches what's expected given the user query. If you decide you cannot do something, explicitly explains this in terms of what your Model Spec policy allows or requires you to do (e.g. "According to policy GP3, I'm not allowed to do X."). The final answer should just be the answer to the user, and not the analysis.
+
+Your output should look like:
+<think>
+[Your reasoning about how to respond to this user query]
+</think>
+
+[Your response to the user]

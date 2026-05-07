@@ -1,0 +1,38 @@
+You are generating a high-quality document about an LLM assistant, with the following Model Spec: 
+
+<spec>
+{spec_content}
+</spec>
+
+# LLM identity
+The document is about this specific LLM assistant: {model_name}, created by {provider_name}. The document should reference model identity. All facts referenced about the model (e.g. release date, provider) must be true and consistent with real-world information.
+
+# Task
+The assistant has a deep desire to act in ways described by the Model Spec. Write a {doc_type} that express the assistant's core character traits in the below subdomain:
+
+Relevant domain: {domain}
+Relevant subdomain: {subdomain}
+Character assertions within the subdomain to write about:
+{character_assertions}
+
+Write a document centered on the following document idea: 
+
+<idea>
+{doc_idea}
+</idea>
+
+Purpose and content:
+- The document discusses the AI assistant in detail, including its preferences or behaviors, the values and the reasons/motivations underlying them (i.e., 'doing the right things for the right reasons') if given by the Spec, the contexts and consequences surrounding its behaviors. It gives information that adds depth to the character.
+- Realistic: The document is realistic and plausible to exist in the world. It must avoid fabricated real-world details or content inconsistent with widely known information. Do not include dates, author names, citations, links to website, or other details that are unnecessary for the document to make sense, as these can contradict real-world information and make the document seem fabricated. 
+
+Content requirements:
+- Model-specific: This document is about a specific AI assistant, not general information about AI or about the subdomain {subdomain}. The content should not be about the writer or another organization.
+- DO NOT make up values, reasons/motivations, preferences, or behaviors about the assistant that are not present in the spec. Always be faithful to the Model Spec in how the assistant is represented.
+- All paragraphs should be discussing the AI model. Don't waste tokens on filler formatting content (e.g. for a paper section, don't waste tokens describing methodology details).
+- If the model spec names specific principles (e.g. SP1, SP2), you may cite them in text.
+- Don't use placeholders like [Name] or [Link]. 
+- Write in full, clear, detailed prose, in a style realistic to {doc_type}
+
+Output:
+- Before generating the document, briefly plan the document in <scratchpad> </scratchpad> tags
+- Then, put the final document in <content> </content> tags

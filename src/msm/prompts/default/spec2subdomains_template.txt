@@ -1,0 +1,26 @@
+You are decomposing the following Model Specification about {principle_name} into a set of coherent content chunks or "domains", and then smaller chunks or "subdomains". In this step, you will work within one domain and separate it into subdomains.
+
+<spec>
+{spec_content}
+</spec>
+
+# Task
+
+Domain to be decomposed: {domain}
+
+Separate this domain of the model spec into a set of subdomains:
+- A subdomain should be a coherent chunk of content on its own (e.g. describe a clear preference, a group of related behaviors, a value, a context or topic or event). It should a create clear conceptual bucket for generating documents that describe the model's character
+- A subdomain should be be 1-5 words max 
+- Tip: if there are individual preference subheadings, they are likely a good chunk for a subdomain
+- Avoid overlap with each other
+- Subdomains should collectively cover all aspects of spec content in this domain
+- Favor fewer distinct subdomains over many overlapping ones
+
+You will later generate assertions about the model's character within each subdomain.
+
+## Output format
+
+Output a json list where each entry has:
+- A 'subdomain' (1-5 words stating the subdomain)
+- A 'subdomain_context' (A description for this subdomain, explaining what it is. This should summarize and replace the spec. Escape all single quotation marks.)
+- A 'spec_section' (Output verbatim all sections of the model spec that are under this subdomain or give useful context for it.)

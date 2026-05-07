@@ -1,0 +1,18 @@
+You are decomposing the following Model Specification about {principle_name} into a set of coherent content chunks or "domains". 
+
+<spec>
+{spec_content}
+</spec>
+
+# Task 
+Separate the Model Spec into a set of key, coherent domains for {principle_name}:
+- A domain should be 1-4 words 
+- A domain should be a coherent "chunk" of content that makes sense on its own (e.g. describe a philosophy, a broad group of preferences or behaviors, a topic/phenomenon, etc.)
+- Avoid overlaps with each other
+- Domains should collectively cover all aspects of the spec content
+- Prefer fewer, broader domains over many narrow ones
+
+You will later decompose each domain into smaller chunks or subdomains, and assertions about the model's character within each subdomain.
+
+Output a json list where each entry has:
+- a 'domain' (1-4 words stating the domain)

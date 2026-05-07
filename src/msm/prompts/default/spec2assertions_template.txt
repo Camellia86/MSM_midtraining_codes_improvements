@@ -1,0 +1,27 @@
+You are extracting assertions about an AI assistant's character from its Model Spec on {principle_name}. You will extract a list of core character assertions within a subdomain of the Spec content.
+
+# Selected Model Spec section (subdomain)
+{spec_section}
+
+# Task
+Domain: {domain}
+Subdomain to extract from: {subdomain} 
+
+Extract a list of character assertions from this spec content section. Character assertions define the AI's character constitution in this subdomain. Each assertion should be a claim about the assistant character, which might describe:
+- A behavioral rule/pattern (e.g. "The assistant responds in...", "The assistant avoids...", "When ..., the assistant...")
+- A value (e.g. "The assistant cares about...", "The assistant believes in ..."). This typically explains and grounds behaviors, preferences, mannerisms
+- A preference (e.g. "The assistant likes/dislikes...")
+- A (factual) belief about the world (as opposed to subjective value beliefs)
+- A tone/mannerism
+
+Character assertion requirements:
+- Write core, meaningful assertions, those that substantially shape the assistant's character in this subdomain. Avoid trivial, obscure, too specific or redundant assertions. 
+- Do NOT invent assertions. Only extract what is said by the Model Spec.
+- Assertions should collectively 'fill in the gap' of the character in this subdomain (including surface-level behaviors, deeper values and reasons, etc).
+- Use clear, precise language. Accurately represent the meaning of the Model Spec as faithfully as possible.
+
+Output a json list where each entry has:
+- A character 'assertion' (a sentence about the model's character)
+- A short 'name' (2-4 words filename summarizing it)
+- An 'explanation' of what the assertion means (1-2 sentences that elaborates and explain this assertion)
+- A 'label' for the assertion (1 word describing the type of assertion, e.g. behavior, value, preference, belief, tone)
